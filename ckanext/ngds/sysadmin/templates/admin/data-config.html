@@ -1,0 +1,41 @@
+{% extends "admin/config.html" %}
+
+{% block primary_content_inner %}
+  <form method='post' action="" class="form-horizontal featured-data-form">
+    {% block admin_form %}
+      <div id="featured-data-md">
+        {% if data.get('ngds.featured_data') == None %}
+          {{ autoform.generate(form_items, data, errors) }}
+        {% else %}
+          {% for item in data.get('ngds.featured_data') %}
+            {{ autoform.generate(form_items, item, errors) }}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <button class="btn btn-success" type="button" data-module="ngds_sysadmin">Add another</button>
+    {% endblock %}
+    <div class="form-actions">
+      <button type="submit" class="btn btn-danger pull-left" name="data-config" value="reset">{{ _('Reset') }}</button>
+      <button type="submit" class="btn btn-primary" name="data-config" value="save">{{ _('Update Config') }}</button>
+    </div>
+  </form>
+{% endblock %}
+
+{% block secondary_content %}
+  <div class="module module-narrow module-shallow">
+    <h2 class="module-heading">
+      <i class="icon-info-sign"></i>
+      {{ _('CKAN config options') }}
+    </h2>
+    <div class="module-content">
+      {% block admin_form_help %}
+      {% trans %}
+        <p><strong>Featured Data:</strong> Text about datasets that will appear
+        on this CKAN instance's homepage.</p>
+      {% endtrans %}
+      {% endblock %}
+    </div>
+  </div>
+
+  {% resource "sysadmin/ngds_sysadmin.js" %}
+{% endblock %}

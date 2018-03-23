@@ -1,0 +1,31 @@
+[
+    {
+        "name":"DOE/NREL Geothermal Data Repository",
+        "abbreviation":"GDR",
+        "logo_path":"logos/gdr.png",
+        "url":"http://gdr.openei.org/",
+        "is_gold":"true"
+    },
+    {
+        "name":"Southern Methodist University",
+        "abbreviation":"SMU",
+        "logo_path":"logos/smu.png",
+        "url":"http://smu.edu/geothermal/",
+        "is_gold":"true"
+    },
+    {
+        "name":"U. S. Geological Survey",
+        "abbreviation":"USGS",
+        "logo_path":"logos/usgs.png",
+        "url":"http://energy.usgs.gov/OtherEnergy/Geothermal.aspx",
+        "is_gold":"true"
+    },
+    {
+        "name":"Association of American State Geologists",
+        "abbreviation":"AASG",
+        "logo_path":"logos/aasg_small.png",
+        "url":"http://www.stategeologists.org/",
+        "is_gold":"true"
+    }
+
+]
